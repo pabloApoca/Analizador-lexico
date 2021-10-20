@@ -59,6 +59,28 @@
 		</dependency>
 		-->
 
+		<!-- https://mvnrepository.com/artifact/de.jflex/jflex
+		<dependency>
+			<groupId>de.jflex</groupId>
+			<artifactId>jflex</artifactId>
+			<version>1.8.2</version>
+		</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/edu.umass.cs.iesl/jflex-scala
+		<dependency>
+			<groupId>edu.umass.cs.iesl</groupId>
+			<artifactId>jflex-scala</artifactId>
+			<version>1.6.1</version>
+		</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/com.linkedin.dagli/text-tokenization-jflex -->
+		<dependency>
+			<groupId>com.linkedin.dagli</groupId>
+			<artifactId>text-tokenization-jflex</artifactId>
+			<version>15.0.0-beta9</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
