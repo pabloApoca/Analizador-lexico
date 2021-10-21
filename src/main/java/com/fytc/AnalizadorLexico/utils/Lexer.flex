@@ -1,5 +1,5 @@
-package codigo;
-import static utilsg.Tokens.*;
+package com.fytc.AnalizadorLexico.utils;
+import static com.fytc.AnalizadorLexico.utils.Tokens.*;
 %%
 %class Lexer
 %type Tokens
@@ -7,7 +7,7 @@ L=[a-zA-Z_]+
 D=[0-9]+
 espacio=[ ,\t,\r,\n]+
 %{
-    public String lexemas;
+    public String lexeme;
 %}
 %%
 int |

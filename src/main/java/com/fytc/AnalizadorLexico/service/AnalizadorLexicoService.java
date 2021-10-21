@@ -1,7 +1,5 @@
 package com.fytc.AnalizadorLexico.service;
 
-import jflex.anttask.JFlexTask;
-
 import java.io.File;
 
 public class AnalizadorLexicoService {
@@ -11,9 +9,12 @@ public class AnalizadorLexicoService {
 
         generarLexer(ruta);
     }*/
-    public static void generarLexer(String ruta){
-        File archivo = new File(ruta);
-        //JFlex
+
+    public static void generarLexer(String rutaLexer){
+
+
+        File archivo = new File(rutaLexer);
+
         JFlex.Main.generate(archivo);
     }
 
