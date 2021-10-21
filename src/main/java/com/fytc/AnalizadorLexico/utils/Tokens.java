@@ -1,5 +1,5 @@
 
-package com.fytc.AnalizadorLexico.modelo;
+package com.fytc.AnalizadorLexico.utils;
 
 
 public enum Tokens {
