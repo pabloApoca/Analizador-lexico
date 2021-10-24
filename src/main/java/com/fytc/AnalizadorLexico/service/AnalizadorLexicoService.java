@@ -5,22 +5,29 @@ import com.fytc.AnalizadorLexico.utils.Tokens;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Service
 public class AnalizadorLexicoService {
 
 
-    public static void generarLexer(String rutaLexer){
+    public void generarLexer(String rutaLexer){
 
         File archivo = new File(rutaLexer);
         JFlex.Main.generate(archivo);
     }
 
-    public String analizar (String texto) throws IOException {
+    /**/public String analizar (String texto) throws IOException {
         String resultado = "";
+
         String resultadoFinal = "";
-        Reader lector = new BufferedReader(new StringReader(texto));
+        //Reader lector = new BufferedReader(new FileReader("archivo.txt"));
+
+        StringReader lector = new StringReader(texto);
         Lexer lexer = new Lexer(lector);
+
+
 
         while (true){
             Tokens tokens = lexer.yylex();
@@ -39,8 +46,6 @@ public class AnalizadorLexicoService {
                     resultado += "Token: " + tokens + "\n";
                     break;
             }
-
-
         }
     }
 
