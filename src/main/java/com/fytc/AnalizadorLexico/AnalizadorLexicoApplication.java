@@ -9,12 +9,16 @@ import static com.fytc.AnalizadorLexico.service.AnalizadorLexicoService.generarL
 @SpringBootApplication
 public class AnalizadorLexicoApplication {
 
+
+
 	public static void main(String[] args) {
 		SpringApplication.run(AnalizadorLexicoApplication.class, args);
 
-		String rutaLexer = "C:/Users/pablo/OneDrive/Escritorio/Analizador-lexico/src/main/java/com/fytc/AnalizadorLexico/utils/Lexer.flex";
+		//String rutaLexer = "C:/Users/pablo/OneDrive/Escritorio/Analizador-lexico/src/main/java/com/fytc/AnalizadorLexico/utils/Lexer.flex";
 
-		generarLexer(rutaLexer);
+		String rutaLexer2 = "C:/Users/sergi/OneDrive/Escritorio/Todo a archivos/Analizador-lexico/src/main/java/com/fytc/AnalizadorLexico/utils/Lexer.flex";
+
+		generarLexer(rutaLexer2);
 	}
 
 }
