@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.util.List;
 
 
 @RestController
@@ -28,5 +29,10 @@ public class AnalizadorLexicoController {
     /**/@PostMapping("/analizar")
     public String devolverRespuesta (String analizar) throws IOException {
         return analizadorLexicoService.analizar(analizar);
+    }
+
+    /**/@PostMapping("/escribir")
+    public List<String> escribir (String texto) throws IOException {
+        return analizadorLexicoService.escribirArchivoTxt(texto);
     }
 }
