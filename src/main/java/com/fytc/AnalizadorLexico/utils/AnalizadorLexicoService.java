@@ -1,6 +1,6 @@
-package com.fytc.AnalizadorLexico.service;
+package com.fytc.AnalizadorLexico.utils;
 
-import com.fytc.AnalizadorLexico.utils.Lexer;
+//import com.fytc.AnalizadorLexico.utils.Lexer;
 import com.fytc.AnalizadorLexico.utils.Tokens;
 import org.springframework.stereotype.Service;
 
