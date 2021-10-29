@@ -4,6 +4,7 @@ import com.fytc.AnalizadorLexico.utils.AnalizadorLexicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
@@ -32,7 +33,7 @@ public class AnalizadorLexicoController {
     }
 
     /**/@PostMapping("/escribir")
-    public List<String> escribir (String texto) throws IOException {
+    public List<String> escribir (@RequestBody String texto) throws IOException {
         return analizadorLexicoService.escribirArchivoTxt(texto);
     }
 }
