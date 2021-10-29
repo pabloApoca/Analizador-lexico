@@ -19,7 +19,7 @@ public class AnalizadorLexicoService {
         JFlex.Main.generate(archivo);
     }
 
-    public List<String> escribirArchivoTxt(String texto) throws IOException {
+    public String escribirArchivoTxt(String texto) throws IOException {
         File archivo = new File("archivo.txt");
         PrintWriter escribir;
 
@@ -35,22 +35,24 @@ public class AnalizadorLexicoService {
         Lexer lexer = new Lexer(lector);
 
         String resultado = "";
-        List<String> resultadoFinal = new ArrayList<>();
-
+        String resultadoFinal = "";
 
         while (true){
             Tokens tokens = lexer.yylex();
             if (tokens==null){
                 resultado += "FIN";
-                resultadoFinal.add(resultado);
+                resultadoFinal += resultado;
                 return resultadoFinal;
             }
             switch (tokens) {
                 case ERROR:
                     resultado += "Simbolo no definido\n";
                     break;
-                case Identificador: case Numero: case Reservadas:
+                case Identificador: case Numero:
                     resultado += lexer.lexeme + ": Es un " + tokens + "\n";
+                    break;
+                case Reservadas:
+                    resultado += lexer.lexeme + ": Es una de las "+ tokens + "\n";
                     break;
                 default:
                     resultado += "Token: " + tokens + "\n";

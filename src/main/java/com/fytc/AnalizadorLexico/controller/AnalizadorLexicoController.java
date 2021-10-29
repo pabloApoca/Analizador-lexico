@@ -20,9 +20,9 @@ public class AnalizadorLexicoController {
     @GetMapping("/generarlexer")
     public String generarlexer(){
 
-        String rutaLexer2 = "src/main/java/com/fytc/AnalizadorLexico/utils/Lexer.flex";
+        String rutaLexer = "src/main/java/com/fytc/AnalizadorLexico/utils/Lexer.flex";
 
-        analizadorLexicoService.generarLexer(rutaLexer2);
+        analizadorLexicoService.generarLexer(rutaLexer);
 
         return "Lexer generado correctamente.";
     }
@@ -33,7 +33,7 @@ public class AnalizadorLexicoController {
     }
 
     /**/@PostMapping("/escribir")
-    public List<String> escribir (@RequestBody String texto) throws IOException {
+    public String escribir (@RequestBody String texto) throws IOException {
         return analizadorLexicoService.escribirArchivoTxt(texto);
     }
 }
