@@ -21,16 +21,12 @@ public class AnalizadorLexicoController {
     public String generarlexer(){
 
         String rutaLexer = "src/main/java/com/fytc/AnalizadorLexico/utils/Lexer.flex";
-
         analizadorLexicoService.generarLexer(rutaLexer);
 
         return "Lexer generado correctamente.";
     }
 
-    /**/@PostMapping("/analizar")
-    public String devolverRespuesta (String analizar) throws IOException {
-        return analizadorLexicoService.analizar(analizar);
-    }
+
 
     /**/@PostMapping("/escribir")
     public String escribir (@RequestBody String texto) throws IOException {
