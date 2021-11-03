@@ -9,12 +9,18 @@ public enum Tokens {
     Resta,
     Multiplicacion,
     Division,
+    Potenciacion,
     Identificador,
     Numero,
     ERROR,
     Mayor,
     Menor,
     MenorOIgual,
-    MayorOIgual
+    MayorOIgual,
+    Distinto,
+    Conjuncion,
+    Disyuncion,
+    Negacion,
+    Modulo
 
 }

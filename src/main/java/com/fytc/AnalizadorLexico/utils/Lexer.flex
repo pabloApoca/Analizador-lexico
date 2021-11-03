@@ -16,15 +16,21 @@ else |
 while {lexeme=yytext(); return Reservadas;}
 {espacio} {/*Ignore*/}
 "//".* {/*Ignore*/}
-"=" {return Igual;}
 "+" {return Suma;}
 "-" {return Resta;}
 "*" {return Multiplicacion;}
 "/" {return Division;}
+"^" {return Potenciacion;}
 ">" {return Mayor;}
 "<" {return Menor;}
+"=" {return Igual;}
 "<=" {return MenorOIgual;}
 ">=" {return MayorOIgual;}
+"><" {return Distinto;}
+"Y"|"&" {return Conjuncion;}
+"O"|"|" {return Disyuncion;}
+"NO"|"∼" {return Negacion;}
+"%"|"MOD" {return Modulo;}
 {L}({L}|{D})* {lexeme=yytext(); return Identificador;}
 ("(-"{D}+")")|{D}+ {lexeme=yytext(); return Numero;}
  . {return ERROR;}
