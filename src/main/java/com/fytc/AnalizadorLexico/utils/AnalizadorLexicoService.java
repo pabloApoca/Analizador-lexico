@@ -50,8 +50,12 @@ public class AnalizadorLexicoService {
                 case Reservadas:
                     resultado += lexer.lexeme + ": Es una de las "+ tokens + "\n";
                     break;
+                /*case Mayor: case Menor: case MenorOIgual: case MayorOIgual:
+                    resultado += lexer.yytext() + ": Es "+ tokens + "\n";
+                    break;*/
                 default:
-                    resultado += "Token: " + tokens + "\n";
+                    //resultado += "Token: " + tokens + "\n";
+                    resultado += lexer.yytext() + " --> "+ tokens + "\n";
                     break;
             }
         }

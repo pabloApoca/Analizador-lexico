@@ -21,6 +21,10 @@ while {lexeme=yytext(); return Reservadas;}
 "-" {return Resta;}
 "*" {return Multiplicacion;}
 "/" {return Division;}
+">" {return Mayor;}
+"<" {return Menor;}
+"<=" {return MenorOIgual;}
+">=" {return MayorOIgual;}
 {L}({L}|{D})* {lexeme=yytext(); return Identificador;}
 ("(-"{D}+")")|{D}+ {lexeme=yytext(); return Numero;}
  . {return ERROR;}

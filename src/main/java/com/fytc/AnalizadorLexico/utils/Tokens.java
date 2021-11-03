@@ -11,5 +11,10 @@ public enum Tokens {
     Division,
     Identificador,
     Numero,
-    ERROR
+    ERROR,
+    Mayor,
+    Menor,
+    MenorOIgual,
+    MayorOIgual
+
 }
