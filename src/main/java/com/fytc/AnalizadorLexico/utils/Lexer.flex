@@ -10,11 +10,19 @@ espacio=[ ,\t,\r,\n]+
     public String lexeme;
 %}
 %%
-int |
-if |
-else |
-while {lexeme=yytext(); return Reservadas;}
+
 {espacio} {/*Ignore*/}
+"ALGORITMO"|"Algoritmo"|"algoritmo" {return InicioAlgoritmo;}
+"FINALGORITMO"|"FinAlgoritmo"|"finalgoritmo" {return FinAlgoritmo;}
+
+"," {return Encadenar;}
+";" {return PuntoYComa;}
+
+"CARACTER"|"Caracter"|"caracter" {return TipoDeDatoCaracter;}
+"ENTERO"|"Entero"|"entero" {return TipoDeDatoEntero;}
+"LOGICO"|"Logico"|"logico" {return TipoDeDatoLogico;}
+"REAL"|"Real"|"real" {return TipoDeDatoReal;}
+
 "//".* {/*Ignore*/}
 "+" {return Suma;}
 "-" {return Resta;}
@@ -31,45 +39,55 @@ while {lexeme=yytext(); return Reservadas;}
 "><" {return Distinto;}
 
 "Y"|"&" {return Conjuncion;}
-"O"|"|" {return Disyuncion;}
+"O"|"||" {return Disyuncion;}
 "NO"|"∼" {return Negacion;}
 
-"RC" {return RaizCuadrada;}
+"RC"|"RAIZ" {return RaizCuadrada;}
 "ABS" {return ValorAbsoluto;}
 "LN" {return LogaritmoNatural;}
 "EXP" {return FuncionExponencial;}
 "SEN" {return Seno;}
 "COS" {return Coseno;}
+"TAN" {return Tangente;}
+"ASEN" {return Arcoseno;}
+"ACOS" {return Arcocoseno;}
 "ATAN" {return Arcotangente;}
 "TRUNC" {return ParteEntera;}
 "REDON" {return EnteroMasCercano;}
 "AZAR" {return EnteroAleatorio;}
+"LONGITUD" {return Longitud;}
+"CONCATENAR" {return ConcatenarCadenas;}
+"CONVERTIRANUMERO" {return ConvertirVariableANumero;}
+"CONVERTIRATEXTO" {return ConvertirVariableATexto;}
 
-"LEER"|"leer" {return EntradaLectura;}
-"ESCRIBIR"|"escribir" {return  SalidaEscritura;}
+"LEER"|"Leer"|"leer" {return EntradaLectura;}
+"ESCRIBIR"|"Escribir"|"escribir" {return SalidaEscritura;}
 "<-" {return Asignacion;}
 
-"SI"|"si" {return InicioCondicionalSi;}
-"ENTONCES"|"entonces" {return  EntoncesIntrucciones;}
-"SINO"|"sino" {return CondicionalSi;}
-"FINSI"|"finsi" {return FinCondicionalSi;}
+"SI"|"Si"|"si" {return InicioCondicionalSi;}
+"ENTONCES"|"Entonces"|"entonces" {return  EntoncesIntrucciones;}
+"SINO"|"Sino"|"sino" {return CondicionalSi;}
+"FINSI"|"FinSi"|"finsi" {return FinCondicionalSi;}
 
-"MIENTRAS"|"mientras" {return InicioRepeticionMientras;}
-"HACER"|"hacer" {return  HacerIntrucciones;}
-"FINMIENTRAS"|"finmientras" {return FinRepeticionMientras;}
+"MIENTRAS"|"Mientras"|"mientras" {return InicioRepeticionMientras;}
+"HACER"|"Hacer"|"hacer" {return HacerIntrucciones;}
+"FINMIENTRAS"|"FinMientras"|"finmientras" {return FinRepeticionMientras;}
 
-"PARA"|"para" {return InicioPara;}
-"DESDE"|"desde" {return  MarcarDesde;}
-"CON PASO"|"con paso" {return MarcarConPaso;}
-"FINPARA"|"finpara" {return FinPara;}
+"PARA"|"Para"|"para" {return InicioPara;}
+"DESDE"|"Desde"|"desde" {return MarcarDesde;}
+"CON PASO"|"Con paso"|"Con Paso"|"con paso" {return MarcarConPaso;}
+"FINPARA"|"FinPara"|"finpara" {return FinPara;}
 
-"DEFINIR"|"definir" {return DefinirVariable;}
-"COMO"|"como" {return  DefinirComoTipo;}
-"DIMENSION"|"dimension" {return DefinirDimension;}
+"DEFINIR"|"Definir"|"definir" {return DefinirVariable;}
+"COMO"|"Como"|"como" {return DefinirComoTipo;}
+"DIMENSION"|"Dimension"|"dimension" {return DefinirDimension;}
 
-"SUBPROCESO"|"subproceso" {return InicioSubProceso;}
-"COMENZAR"|"comenzar" {return ComenzarSubProceso;}
-"FINSUBPROCESO"|"finsubproceso" {return  FinSubProceso;}
+"PROCESO"|"Proceso"|"proceso" {return InicioProceso;}
+"FINPROCESO"|"FinProceso"|"finproceso" {return FinProceso;}
+
+"SUBPROCESO"|"SubProceso"|"subproceso" {return InicioSubProceso;}
+"COMENZAR"|"Comenzar"|"comenzar" {return ComenzarSubProceso;}
+"FINSUBPROCESO"|"FinSubProceso"|"finsubproceso" {return  FinSubProceso;}
 
 {L}({L}|{D})* {lexeme=yytext(); return Identificador;}
 ("(-"{D}+")")|{D}+ {lexeme=yytext(); return Numero;}

@@ -3,7 +3,14 @@ package com.fytc.AnalizadorLexico.utils;
 
 
 public enum Tokens {
-    Reservadas,
+    InicioAlgoritmo,
+    FinAlgoritmo,
+    Encadenar,
+    PuntoYComa,
+    TipoDeDatoCaracter,
+    TipoDeDatoEntero,
+    TipoDeDatoLogico,
+    TipoDeDatoReal,
     Igual,
     Suma,
     Resta,
@@ -28,10 +35,17 @@ public enum Tokens {
     FuncionExponencial,
     Seno,
     Coseno,
+    Tangente,
+    Arcoseno,
+    Arcocoseno,
     Arcotangente,
     ParteEntera,
     EnteroMasCercano,
     EnteroAleatorio,
+    Longitud,
+    ConcatenarCadenas,
+    ConvertirVariableANumero,
+    ConvertirVariableATexto,
     EntradaLectura,
     SalidaEscritura,
     Asignacion,
@@ -49,8 +63,11 @@ public enum Tokens {
     DefinirVariable,
     DefinirComoTipo,
     DefinirDimension,
+    InicioProceso,
+    FinProceso,
     InicioSubProceso,
     ComenzarSubProceso,
-    FinSubProceso
+    FinSubProceso,
+
 
 }

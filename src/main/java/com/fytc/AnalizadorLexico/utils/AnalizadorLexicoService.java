@@ -42,17 +42,11 @@ public class AnalizadorLexicoService {
             }
             switch (tokens) {
                 case ERROR:
-                    resultado += "Simbolo no definido\n";
+                    resultado += lexer.yytext() + " ERROR: Simbolo no definido.\n";
                     break;
                 case Identificador: case Numero:
-                    resultado += lexer.lexeme + ": Es un " + tokens + "\n";
+                    resultado += lexer.lexeme + " --> " + tokens + "\n";
                     break;
-                case Reservadas:
-                    resultado += lexer.lexeme + ": Es una de las "+ tokens + "\n";
-                    break;
-                /*case Mayor: case Menor: case MenorOIgual: case MayorOIgual:
-                    resultado += lexer.yytext() + ": Es "+ tokens + "\n";
-                    break;*/
                 default:
                     //resultado += "Token: " + tokens + "\n";
                     resultado += lexer.yytext() + " --> "+ tokens + "\n";
