@@ -17,6 +17,10 @@ espacio=[ ,\t,\r,\n]+
 
 "," {return Encadenar;}
 ";" {return PuntoYComa;}
+":" {return DosPuntos;}
+"(" {return AbreParentesis;}
+")" {return CierreParentesis;}
+"\""|"\“" {return Comilla;}
 
 "CARACTER"|"Caracter"|"caracter" {return TipoDeDatoCaracter;}
 "ENTERO"|"Entero"|"entero" {return TipoDeDatoEntero;}

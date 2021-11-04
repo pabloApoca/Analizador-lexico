@@ -11,5 +11,5 @@ Proceso
         promedio = promedio + numAIngresar;
     FinMientras
 
-    Escribir “La división es: “, promedio / 10;
+    Escribir “La división es: ", promedio / 10;
 FinProceso
