@@ -1,8 +1,8 @@
-if while 
-Y
-NO
-MOD
-%
-| O
-∼
-^
+subproceso
+COMENZAR
+finsubproceso
+COMO
+definir
+con paso CON PASO
+PARA
+finsi
