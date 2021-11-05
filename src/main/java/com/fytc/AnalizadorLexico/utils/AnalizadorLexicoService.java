@@ -15,7 +15,7 @@ public class AnalizadorLexicoService {
     }
 
 
-    public String escribirArchivoTxt(String texto) throws IOException {
+    public String analizarTexto(String texto) throws IOException {
         File archivo = new File("archivo.txt");
         PrintWriter escribir;
 

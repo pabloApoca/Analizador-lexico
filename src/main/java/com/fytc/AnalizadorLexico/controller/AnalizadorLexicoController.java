@@ -28,8 +28,8 @@ public class AnalizadorLexicoController {
 
 
 
-    /**/@PostMapping("/escribir")
+    @PostMapping("/analizartexto")
     public String escribir (@RequestBody String texto) throws IOException {
-        return analizadorLexicoService.escribirArchivoTxt(texto);
+        return analizadorLexicoService.analizarTexto(texto);
     }
 }
