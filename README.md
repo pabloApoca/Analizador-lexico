@@ -1,6 +1,15 @@
-# Analizador-lexico
-Trabajo final para la materia Fundamentos y teoría de la computación de mi carrera en UNLa. 
+# Analizador léxico
+Trabajo final para la materia Fundamentos y teoría de la computación de mi carrera en UNLa.
 
+Esta Api va a contener el desarrollo de un proyecto el cual será crear un analizador léxico para un conjunto de palabras en el lenguaje de programación Java.
+
+* Vamos a utilizar la herramienta JFlex en cual es un generador de analizadores léxicos para Java.
+
+* Se va a definir mediante expresiones regulares los Tokens que formarán parte de nuestro lenguaje.
+
+* Se va a definir mediante expresiones regulares los Tokens que formarán parte de nuestro lenguaje.
+
+* La herramienta JFlex tiene como entrada las reglas léxicas que están definidas en el Lexer.flex y nos da como salida una clase Flexer el cual tiene los métodos para hacer el análisis léxico.
 
 
     * Lexer.flex : Archivo donde definimos todas nuestras reglas y/o lexemas.
@@ -9,9 +18,25 @@ Trabajo final para la materia Fundamentos y teoría de la computación de mi car
 
 Si necesitas saber como cree el scaffolding inicial de esta Api entra a aqui:
 
-* [PROYECTO BASE](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.5.5&packaging=jar&jvmVersion=11&groupId=com.fytc&artifactId=AnalizadorLexico&name=AnalizadorLexico&description=Trabajo%20final%20para%20la%20materia%20Fundamentos%20y%20teor%C3%ADa%20de%20la%20computaci%C3%B3n%20de%20mi%20carrera%20en%20UNLa.%20&packageName=com.fytc.AnalizadorLexico&dependencies=devtools,lombok,web,data-jpa,validation,mysql): Spring Initialzr
+* Link a Spring Initialzr para ver el [PROYECTO BASE](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.5.5&packaging=jar&jvmVersion=11&groupId=com.fytc&artifactId=AnalizadorLexico&name=AnalizadorLexico&description=Trabajo%20final%20para%20la%20materia%20Fundamentos%20y%20teor%C3%ADa%20de%20la%20computaci%C3%B3n%20de%20mi%20carrera%20en%20UNLa.%20&packageName=com.fytc.AnalizadorLexico&dependencies=devtools,lombok,web,data-jpa,validation,mysql)
+
+
+-----------------------------------------------------------
 
 Una vez levantado el contexto de Spring y nuestro servidor vamos a necesitar generar el Lexer que se va a crear en base a las reglas que tenga nuestro Lexer.flex y los Tokens que hayamos definido en nuestra clase Tokens.
+
+
+* Para testear la Api vamos a hacer uso de [Postman](https://www.postman.com/downloads/).
+
+
+    Postman es una aplicación que nos permite realizar pruebas API. 
+    Es un cliente HTTP que nos da la posibilidad de testear 'HTTP requests' 
+    a través de una interfaz gráfica de usuario, por medio de la cual 
+    obtendremos diferentes tipos de respuesta que posteriormente deberán 
+    ser validados.
+
+
+-----------------------------------------------------------
 
 # 1 - Generar lexer
 
@@ -25,6 +50,9 @@ Una vez levantado el contexto de Spring y nuestro servidor vamos a necesitar gen
     Lexer generado correctamente.
 
 
+* Ejemplo de cómo debería quedar el 1er endpoint en Postman.
+
+![Alt text](docs/images/generarLexer.png)
 
 -----------------------------------------------------------
 
@@ -123,6 +151,10 @@ Una vez levantado el contexto de Spring y nuestro servidor vamos a necesitar gen
     FinProceso --> FinProceso
     FIN
 
+
+* Ejemplo de cómo debería quedar el 2do endpoint en Postman.
+
+![Alt text](docs/images/analizarTexto.png)
 ----------------
 
 
@@ -132,5 +164,5 @@ Una vez levantado el contexto de Spring y nuestro servidor vamos a necesitar gen
 # Materia 
 * Fundamentos y teoría de la computación
 
-#Universidad
+# Universidad
 * Universidad Nacional de Lanús (UNLa)
