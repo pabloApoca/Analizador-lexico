@@ -10,10 +10,10 @@ public class AnalizadorLexicoService {
 
 
     public void generarLexer(String rutaLexer){
-
         File archivo = new File(rutaLexer);
         JFlex.Main.generate(archivo);
     }
+
 
 
     public String analizarTexto(String texto) throws IOException {
@@ -57,9 +57,14 @@ public class AnalizadorLexicoService {
     }
 
 
-    public String analizarTxt(File file) throws IOException {
+    public String analizarTxt(MultipartFile file) throws IOException {
 
-        Reader lector = new BufferedReader(new FileReader(file.getName()));
+        File convFile = new File(file.getOriginalFilename());
+        FileOutputStream fos = new FileOutputStream(convFile);
+        fos.write(file.getBytes());
+        fos.close();
+
+        Reader lector = new BufferedReader(new FileReader(convFile.getName()));
         Lexer lexer = new Lexer(lector);
 
         String resultado = "";

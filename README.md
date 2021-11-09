@@ -45,7 +45,7 @@ Una vez levantado el contexto de Spring y nuestro servidor vamos a necesitar gen
 ***Al controlador se le va a pasar la ruta del Lexer.flex y siguiendo un poco la lógica del Patrón MVC le va a pasar la responsabilidad al Servicio generarLexer que lo que va a hacer es tomar esa ruta y crear una clase nueva llamada Lexer generada a través del método generate que nos proporciona la librería JFlex.***
 
 ### Endpoint
-    GET http://localhost:8080/generarlexer
+    GET http://localhost:8080/api/v1/analizadorlexico/generarlexer
 
 
 ### Request
@@ -73,7 +73,7 @@ Una vez levantado el contexto de Spring y nuestro servidor vamos a necesitar gen
 * 7: Una vez que se haya terminado de analizar el archivo.txt y se hayan sumado todos los Tokens y Errores se devuelve una Request con los resultados del análisis.
 
 ### Endpoint
-    POST http://localhost:8080/analizartexto
+    POST http://localhost:8080/api/v1/analizadorlexico/analizartexto
 
 ### Ejemplo Payload
 
@@ -157,9 +157,146 @@ Una vez levantado el contexto de Spring y nuestro servidor vamos a necesitar gen
 * Ejemplo de cómo debería quedar el 2do endpoint en Postman.
 
 ![Alt text](docs/images/analizarTexto.png)
+
+
+-----------------------------------------------------------
+
+
+# 3 - Analizar archivos .txt
+
+***Para este tercer endpoint podemos analizar archivos .txt locales y analizar los algoritmos PSEINT que contenga el archivo.
+Para eso debemos importar un archivo .txt al cuerpo  del endpoint con la Key file para que nuestro controller pueda tomar cualquier archivo .txt para ser analizado correctamente.***
+
+
+* 1: Toma el archivo .txt .
+* 2: Se lo pasa el service .
+* 3: Creamos un Reader para poder leer esté archivo.txt .
+* 4: Le pasamos esté Reader a una instancia de la clase Lexer.
+* 5: Atrapamos todos los Tokens que hayamos leído en nuestra instancia del Lexer.
+* 6: Sumamos todos los resultados a una cadena.
+* 7: Una vez que se haya terminado de analizar el archivo.txt y se hayan sumado todos los Tokens y Errores se devuelve una Request con los resultados del análisis.
+
+### Endpoint
+    POST http://localhost:8080/api/v1/analizadorlexico/analizartxt
+
+### Ejemplo de archivo .txt
+
+    SubProceso prom <- Promedio ( arreglo, cantidad )
+        suma <- 0
+        Para i<-1 Hasta cantidad Hacer
+        suma <- suma + arreglo[i]
+        FinPara
+        prom <- suma/cantidad
+    FinSubProceso
+
+    Proceso
+        Dimension datos[100]
+        Escribir "Ingrese la cantidad de datos:"
+        Leer n
+    
+        Para i<-1 Hasta n Hacer
+            Escribir "Ingrese el dato ",i,":"
+            Leer datos[i]
+        FinPara
+    
+        Escribir "El promedio es: ",Promedio(datos,n)
+    FinProceso
+
+### Request
+    SubProceso --> InicioSubProceso
+    prom --> Identificador
+    <- --> Asignacion
+    Promedio --> Identificador
+    ( --> AbreParentesis
+    arreglo --> Identificador
+    cantidad --> Identificador
+    ) --> CierreParentesis
+    suma --> Identificador
+    <- --> Asignacion
+    0 --> Numero
+    Para --> InicioPara
+    i --> Identificador
+    <- --> Asignacion
+    1 --> Numero
+    Hasta --> Identificador
+    cantidad --> Identificador
+    Hacer --> HacerIntrucciones
+    suma --> Identificador
+    <- --> Asignacion
+    suma --> Identificador
+    + --> Suma
+    arreglo --> Identificador
+    [ ERROR: Simbolo no definido.
+    i --> Identificador
+    ] ERROR: Simbolo no definido.
+    FinPara --> FinPara
+    prom --> Identificador
+    <- --> Asignacion
+    suma --> Identificador
+    / --> Division
+    cantidad --> Identificador
+    FinSubProceso --> FinSubProceso
+    Proceso --> InicioProceso
+    Dimension --> DefinirDimension
+    datos --> Identificador
+    [ ERROR: Simbolo no definido.
+    100 --> Numero
+    ] ERROR: Simbolo no definido.
+    Escribir --> SalidaEscritura
+    " --> Comilla
+    Ingrese --> Identificador
+    la --> Identificador
+    cantidad --> Identificador
+    de --> Identificador
+    datos --> Identificador
+    : --> DosPuntos
+    " --> Comilla
+    Leer --> EntradaLectura
+    n --> Identificador
+    Para --> InicioPara
+    i --> Identificador
+    <- --> Asignacion
+    1 --> Numero
+    Hasta --> Identificador
+    n --> Identificador
+    Hacer --> HacerIntrucciones
+    Escribir --> SalidaEscritura
+    " --> Comilla
+    Ingrese --> Identificador
+    el --> Identificador
+    dato --> Identificador
+    " --> Comilla
+    i --> Identificador
+    " --> Comilla
+    : --> DosPuntos
+    " --> Comilla
+    Leer --> EntradaLectura
+    datos --> Identificador
+    [ ERROR: Simbolo no definido.
+    i --> Identificador
+    ] ERROR: Simbolo no definido.
+    FinPara --> FinPara
+    Escribir --> SalidaEscritura
+    " --> Comilla
+    El --> Identificador
+    promedio --> Identificador
+    es --> Identificador
+    : --> DosPuntos
+    " --> Comilla
+    Promedio --> Identificador
+    ( --> AbreParentesis
+    datos --> Identificador
+    n --> Identificador
+    ) --> CierreParentesis
+    FinProceso --> FinProceso
+    FIN
+
+
+* Ejemplo de cómo debería quedar el 3er endpoint en Postman.
+
+![Alt text](docs/images/analizarTxt.png)
 ----------------
-
-
+----------------
 # Author
 * Lopez, Pablo Martin
 
