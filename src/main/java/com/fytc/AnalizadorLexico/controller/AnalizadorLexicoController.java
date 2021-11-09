@@ -2,10 +2,13 @@ package com.fytc.AnalizadorLexico.controller;
 
 import com.fytc.AnalizadorLexico.utils.AnalizadorLexicoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -32,10 +35,15 @@ public class AnalizadorLexicoController {
         return analizadorLexicoService.analizarTexto(texto);
     }
 
-    //@PostMapping("/analizartxt")
-    @PutMapping ( value = "/analizartxt", consumes = { "multipart/form-data" })
-    public String abrirtxt(@RequestPart ( "imageFile") MultipartFile imageFile ) throws IOException {
 
-        return analizadorLexicoService.analizarTxt(imageFile);
+    @PostMapping("/analizartxt")
+    public String abrirtxt(@RequestParam("file") MultipartFile file) throws IOException {
+
+        File convFile = new File(file.getOriginalFilename());
+        FileOutputStream fos = new FileOutputStream(convFile);
+        fos.write(file.getBytes());
+        fos.close();
+
+        return analizadorLexicoService.analizarTxt(convFile);
     }
 }

@@ -79,6 +79,17 @@
 			<artifactId>text-tokenization-jflex</artifactId>
 			<version>15.0.0-beta9</version>
 		</dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.jetbrains</groupId>
+			<artifactId>annotations</artifactId>
+			<version>21.0.1</version>
+		</dependency>
 
 
 	</dependencies>

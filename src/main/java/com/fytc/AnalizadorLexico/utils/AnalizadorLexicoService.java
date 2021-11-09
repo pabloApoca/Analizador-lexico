@@ -57,24 +57,9 @@ public class AnalizadorLexicoService {
     }
 
 
-    public String analizarTxt(MultipartFile txt) throws IOException {
-        File archivo = new File("archivo.txt");
-        PrintWriter escribir;
+    public String analizarTxt(File file) throws IOException {
 
-        MultipartFile newTxt = null;
-
-        newTxt.transferTo((File) txt);
-
-
-        try {
-            escribir = new PrintWriter(archivo);
-            escribir.print(newTxt);
-            escribir.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        Reader lector = new BufferedReader(new FileReader("archivo.txt"));
+        Reader lector = new BufferedReader(new FileReader(file.getName()));
         Lexer lexer = new Lexer(lector);
 
         String resultado = "";
