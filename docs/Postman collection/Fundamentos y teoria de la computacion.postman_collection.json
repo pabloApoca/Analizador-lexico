@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "c1a47669-a683-4dce-9127-3bab29b576af",
+		"name": "Fundamentos y teoria de la computacion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1 - Generar  lexer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/generarlexer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"generarlexer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2 - Analizar texto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Proceso\r\n    Definir numAIngresar Como Real;\r\n    Definir promedio Como Real;\r\n\r\n    promedio = 0;\r\n\r\n    Para contador=0 Con Paso 1 Hasta 9 Hacer\r\n        Escribir “Ingrese número: “;\r\n        Leer numAIngresar;\r\n\r\n        promedio = promedio + numAIngresar;\r\n    FinMientras\r\n\r\n    Escribir “La división es: \", promedio / 10;\r\nFinProceso",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/analizartexto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"analizartexto"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
