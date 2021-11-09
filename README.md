@@ -28,6 +28,8 @@ Una vez levantado el contexto de Spring y nuestro servidor vamos a necesitar gen
 
 * Para testear la Api vamos a hacer uso de [Postman](https://www.postman.com/downloads/).
 
+* Importar [Colección de Postman](docs\Postman collection\Fundamentos y teoria de la computacion.postman_collection.json).
+
 
     Postman es una aplicación que nos permite realizar pruebas API. 
     Es un cliente HTTP que nos da la posibilidad de testear 'HTTP requests' 
