@@ -9,13 +9,22 @@ import java.io.*;
 public class AnalizadorLexicoService {
 
 
+    /**
+     * Toma la ruta que le paso el Controller para generar la clase Lexer con la libreria JFlex.
+     * @param rutaLexer
+     */
     public void generarLexer(String rutaLexer){
         File archivo = new File(rutaLexer);
         JFlex.Main.generate(archivo);
     }
 
 
-
+    /**
+     * Toma el texto que le paso el Controller, crea un nuevo archivo .txt para escribirle el texto y lo analiza con el Lexer.
+     * @param texto
+     * @return String -> Analisis en detalle del String .
+     * @throws IOException
+     */
     public String analizarTexto(String texto) throws IOException {
         File archivo = new File("archivo.txt");
         PrintWriter escribir;
@@ -57,6 +66,12 @@ public class AnalizadorLexicoService {
     }
 
 
+    /**
+     * Toma el archivo .txt que le paso el Controller, lo convierte MultipartFile a un File, lo almacena en el scafolding lo busca y lo analiza con el Lexer.
+     * @param file
+     * @return String -> Analisis en detalle del archivo.txt .
+     * @throws IOException
+     */
     public String analizarTxt(MultipartFile file) throws IOException {
 
         File convFile = new File(file.getOriginalFilename());

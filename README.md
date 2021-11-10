@@ -299,16 +299,16 @@ Para eso debemos importar un archivo .txt al cuerpo  del endpoint con la Key fil
 ![Alt text](docs/images/analizarTxt.png)
 ----------------
 ----------------
-# Author
-* Lopez, Pablo Martin
-
+# Autor
+* ####Lopez, Pablo Martin
+----------------
 # Docente a cargo
-Hernán Guillermo Amatriain
-
+* ####Hernán Guillermo Amatriain
+----------------
 # Asignatura 
-* Fundamentos y teoría de la computación
-
+* ####Fundamentos y teoría de la computación
+----------------
 # Universidad - Carrera
-* Universidad Nacional de Lanús (UNLa) - Licenciatura en sistemas
-
+* ####Universidad Nacional de Lanús (UNLa) - Licenciatura en sistemas
+----------------
 # Departamento de Desarrollo Productivo y Tecnológico
