@@ -1,38 +1,43 @@
 
-package com.fytc.AnalizadorLexico.utils;
+package com.fytc.AnalizadorLexico.service_utils;
 
 
 public enum Tokens {
     InicioAlgoritmo,
     FinAlgoritmo,
+
     Encadenar,
     PuntoYComa,
     DosPuntos,
     AbreParentesis,
     CierreParentesis,
     Comilla,
+    AbreArreglo,
+    CierreArreglo,
+
     TipoDeDatoCaracter,
     TipoDeDatoEntero,
     TipoDeDatoLogico,
     TipoDeDatoReal,
+
     Igual,
     Suma,
     Resta,
     Multiplicacion,
     Division,
     Potenciacion,
-    Identificador,
-    Numero,
-    ERROR,
+    Modulo,
+
     Mayor,
     Menor,
     MenorOIgual,
     MayorOIgual,
     Distinto,
+
     Conjuncion,
     Disyuncion,
     Negacion,
-    Modulo,
+
     RaizCuadrada,
     ValorAbsoluto,
     LogaritmoNatural,
@@ -50,28 +55,39 @@ public enum Tokens {
     ConcatenarCadenas,
     ConvertirVariableANumero,
     ConvertirVariableATexto,
+
     EntradaLectura,
     SalidaEscritura,
     Asignacion,
+
     InicioCondicionalSi,
     EntoncesIntrucciones,
     CondicionalSi,
     FinCondicionalSi,
+
     InicioRepeticionMientras,
     HacerIntrucciones,
     FinRepeticionMientras,
+
     InicioPara,
     MarcarDesde,
     MarcarConPaso,
     FinPara,
+
     DefinirVariable,
     DefinirComoTipo,
     DefinirDimension,
+
     InicioProceso,
     FinProceso,
+
     InicioSubProceso,
     ComenzarSubProceso,
     FinSubProceso,
+
+    Identificador,
+    Numero,
+    ERROR,
 
 
 }

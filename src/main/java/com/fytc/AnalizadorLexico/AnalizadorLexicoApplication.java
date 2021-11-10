@@ -1,6 +1,5 @@
 package com.fytc.AnalizadorLexico;
 
-import com.fytc.AnalizadorLexico.modelo.AnalizadorLexico;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

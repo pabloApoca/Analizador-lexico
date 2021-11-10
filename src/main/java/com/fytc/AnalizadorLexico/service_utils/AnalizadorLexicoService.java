@@ -1,4 +1,4 @@
-package com.fytc.AnalizadorLexico.utils;
+package com.fytc.AnalizadorLexico.service_utils;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;

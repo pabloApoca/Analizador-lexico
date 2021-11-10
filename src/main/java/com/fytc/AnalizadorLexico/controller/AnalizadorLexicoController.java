@@ -1,6 +1,6 @@
 package com.fytc.AnalizadorLexico.controller;
 
-import com.fytc.AnalizadorLexico.utils.AnalizadorLexicoService;
+import com.fytc.AnalizadorLexico.service_utils.AnalizadorLexicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,7 +25,7 @@ public class AnalizadorLexicoController {
      */
     @GetMapping("/generarlexer")
     public String generarlexer(){
-        String rutaLexer = "src/main/java/com/fytc/AnalizadorLexico/utils/Lexer.flex";
+        String rutaLexer = "src/main/java/com/fytc/AnalizadorLexico/service_utils/Lexer.flex";
         analizadorLexicoService.generarLexer(rutaLexer);
 
         return "Lexer generado correctamente.";

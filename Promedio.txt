@@ -7,7 +7,6 @@ SubProceso prom <- Promedio ( arreglo, cantidad )
 FinSubProceso
 
 Proceso
-
     Dimension datos[100]
     Escribir "Ingrese la cantidad de datos:"
     Leer n
@@ -18,5 +17,4 @@ Proceso
     FinPara
     
     Escribir "El promedio es: ",Promedio(datos,n)
-    
 FinProceso

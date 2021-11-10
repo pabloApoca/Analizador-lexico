@@ -1,5 +1,5 @@
-package com.fytc.AnalizadorLexico.utils;
-import static com.fytc.AnalizadorLexico.utils.Tokens.*;
+package com.fytc.AnalizadorLexico.service_utils;
+import static com.fytc.AnalizadorLexico.service_utils.Tokens.*;
 %%
 %class Lexer
 %type Tokens
@@ -21,6 +21,8 @@ espacio=[ ,\t,\r,\n]+
 "(" {return AbreParentesis;}
 ")" {return CierreParentesis;}
 "\""|"\“" {return Comilla;}
+"[" {return AbreArreglo;}
+"]" {return CierreArreglo;}
 
 "CARACTER"|"Caracter"|"caracter" {return TipoDeDatoCaracter;}
 "ENTERO"|"Entero"|"entero" {return TipoDeDatoEntero;}

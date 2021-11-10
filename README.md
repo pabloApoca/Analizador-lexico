@@ -1,6 +1,8 @@
 # Analizador léxico
 Trabajo final para la materia Fundamentos y teoría de la computación de mi carrera en UNLa.
 
+ [Enunciado del Trabajo Final.](docs\Enunciado\FTC Trabajo Practico Final.pptx) 
+
 Esta Api va a contener el desarrollo de un proyecto el cual será crear un analizador léxico para un conjunto de palabras en el lenguaje de programación Java.
 
 * Vamos a utilizar la herramienta JFlex en cual es un generador de analizadores léxicos para Java.
@@ -300,8 +302,13 @@ Para eso debemos importar un archivo .txt al cuerpo  del endpoint con la Key fil
 # Author
 * Lopez, Pablo Martin
 
-# Materia 
+# Docente a cargo
+Hernán Guillermo Amatriain
+
+# Asignatura 
 * Fundamentos y teoría de la computación
 
-# Universidad
-* Universidad Nacional de Lanús (UNLa)
+# Universidad - Carrera
+* Universidad Nacional de Lanús (UNLa) - Licenciatura en sistemas
+
+# Departamento de Desarrollo Productivo y Tecnológico
