@@ -1,0 +1,21 @@
+Algoritmo www_PSeint_Site
+
+    Definir P, L, A, b, h como Real;
+	
+    Escribir "ÁREA DEL TRIÁNGULO";
+    Escribir Sin Saltar "BASE   : ";
+    Leer b;
+    Escribir Sin Saltar "ALTURA : ";
+    Leer h;
+    A <- (b * h) / 2;
+    Escribir "ÁREA : ",A; 
+	
+    Escribir "";
+	
+    Escribir "PERÍMETRO DEL TRIÁNGULO EQUILÁTERO";
+    Escribir Sin Saltar "LADO  : ";
+    Leer L;
+    P <- L * 3;
+    Escribir "PERÍMETRO : ",P;
+    
+FinAlgoritmo

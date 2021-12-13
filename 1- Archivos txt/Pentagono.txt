@@ -1,0 +1,21 @@
+Algoritmo www_PSeint_Site
+
+    Definir P, A, ap, l como Real;
+	
+    Escribir "ÁREA DEL PENTÁGONO";
+    Escribir Sin Saltar "PERÍMETRO : ";
+    Leer P;	
+    Escribir Sin Saltar "APOTEMA   : ";
+    Leer ap;		
+    A <- (P * ap)/2;
+    Escribir "ÁREA : ",A, " cm²"; 
+	
+    Escribir "";
+	
+    Escribir "PERÍMETRO DEL PENTÁGONO";	
+    Escribir Sin Saltar "LADO : ";
+    Leer l;	
+    P <- 5 * l;
+    Escribir "PERÍMETRO : ",P, " cm";
+
+FinAlgoritmo

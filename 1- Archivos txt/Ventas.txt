@@ -1,0 +1,29 @@
+Algoritmo www_pseint_site
+    
+    Escribir Sin Saltar "CANTIDAD DE EMPLEADOS : "
+    Leer empleados
+    Escribir ""
+	
+    Para cont = 1 Hasta empleados Con paso 1 Hacer		
+        Escribir "EMPLEADO Nro ",cont,"/",empleados
+        Escribir Sin Saltar "NOMBRE : "
+        Leer nom
+        Escribir Sin Saltar "GÉNERO (H/M) : "
+        Leer genero
+        Escribir Sin Saltar "VENTAS : "
+        Leer ventas
+        Escribir ""		
+        Si (genero == "H") Entonces
+            tv_h = tv_h + ventas
+        SiNo
+            tv_m = tv_m + ventas
+            muj = muj + 1
+        FinSi					
+    FinPara
+	
+    Escribir "TOTAL DE VENTAS HOMBRES : ",tv_h
+    Escribir "TOTAL DE VENTAS MUJERES : ",tv_m
+    Escribir ""
+    Escribir "PORCENTAJE DE MUJERES   : ",(muj * 100)/empleados
+
+FinAlgoritmo    

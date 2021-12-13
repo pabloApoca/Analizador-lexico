@@ -1,0 +1,18 @@
+Algoritmo Condicional06
+    Escribir "Ingrese Lado 01 : "
+    Leer L1
+    Escribir "Ingrese Lado 02 : "
+    Leer L2
+    Escribir "Ingrese Lado 03 : "
+    Leer L3
+    Si (L1+L2)>L3 Y (L2+L3)>L1 Y (L3+L1)>L2 Entonces
+        Escribir "LOS LADOS INSERTADOS FORMAN UN TRIÁNGULO"
+        Semi = (L1 + L2 + L3)/2
+        Escribir "SEMIPERÍMETRO : ", Semi
+        Area = (Semi * (Semi - L1) * (Semi - L2) * (Semi - L3))
+        Area = rc(Area)
+        Escribir "ÁREA : ", Area
+    SiNo
+        Escribir "LOS LADOS NO PERTENECEN A UN TRIÁNGULO"
+    Fin Si
+FinAlgoritmo    

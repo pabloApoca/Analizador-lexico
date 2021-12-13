@@ -1,0 +1,15 @@
+INICIO
+    VARIABLES: SALARIO, DESC
+    LEER <– SALARIO
+    DESC <– (SALARIO * 0.2)
+    ESCRIBIR -> SALARIO - DESC
+FIN
+                        
+// Mejorando el algoritmo
+INICIO
+VARIABLES: SALARIO, DESC
+    ESCRIBIR -> "Ingrese el Salario: "
+    LEER <– SALARIO
+    DESC <– (SALARIO * 0.2)
+    ESCRIBIR -> "El Nuevo Salario: " SALARIO - DESC
+FIN     
